@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+        h1 {
+            -moz-animation-duration: 3s;
+            -webkit-animation-duration: 3s;
+            -moz-animation-name: slidein;
+            -webkit-animation-name: slidein;
+        }
+        @-moz-keyframes slidein {
+            from {
+                margin-left:100%;
+                width:300%
+            }
+            75% {
+                font-size:300%;
+                margin-left:25%;
+                width:150%;
+            }
+            to {
+                margin-left:0%;
+                width:100%;
+            }
+        }
+        @-webkit-keyframes slidein {
+            from {
+                margin-left:100%;
+                width:300%
+            }
+            75% {
+                font-size:300%;
+                margin-left:25%;
+                width:150%;
+            }
+            to {
+                margin-left:0%;
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <marquee behavior="alternate" direction="right" scrollmount="10">
+        <h1><span id="orange">Front</span>-<span id="violet">End</span></h1>
+        </marquee>
+    </div>
+    
+        
+    <div class="wrapper clearfix">
+        <img src="imgs/HTML5.png" alt="">
+        <img src="imgs/css3.png" alt="">
+        <img src="imgs/JavaScript.png" alt="">
+    </div>
+    <div class="content clearfix">
+        <dl>
+            <dt><strong>HTML5</strong></dt>
+            <dd>(англ. HyperText Markup Language — Мова розмітки гіпертекстових документів) — стандартна мова розмітки веб-сторінок в Інтернеті.</dd>
+            <dt><strong>CSS3</strong></dt>
+            <dd>(англ.Cascading Style Sheets або скорочено CSS) — спеціальна мова, що використовується для опису сторінок, написаних мовами розмітки даних. Найчастіше CSS використовують для візуальної презентації сторінок, написаних HTML та XHTML, але формат CSS може застосовуватися до інших видів XML-документів.</dd>
+            <dt><strong>JavaScript</strong></dt>
+            <dd>динамічна, об'єктно-орієнтованa мова програмування.</dd>
+        </dl>
+    </div>
+</body>
+</html>
