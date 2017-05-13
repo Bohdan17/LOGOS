@@ -1,0 +1,168 @@
+/*---------global-style---------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../img/bg.jpg) repeat-x;
+    background-color: rgb(26, 40, 88);
+    font-family: Arial, Tahoma, sans-serif, "Times New Roman";
+    height: 100%;
+    width: 100%;
+}
+/*---------register-style---------*/
+/*----------header----------*/
+.header {
+    box-sizing: border-box;
+    height: 180px;
+    background: url(../img/header_bg.jpg) no-repeat;
+}
+
+.logo {
+    box-sizing: border-box;
+    padding: 20px 0 0 280px;
+}
+
+/*----------header-end---------*/
+.formin {
+    text-align: center;
+}
+form {
+    width: 40%;
+    margin-left: 30%;
+    padding-top: 10%;
+}
+input {
+    width: 100%;
+    background: transparent;
+    border-bottom: solid 1px #7053c4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 1.3em;
+    padding: 0.5em 0.4em;
+    transition: all 0.4s;
+    color: #BDBDBD;
+}
+input:focus {
+    background: #7035c4;
+    transform: scale3d(1.06,1.06,1.06);
+}
+button {
+    background: transparent;
+    width: 50%;
+    margin-top: 2em;
+    font-size: 1.3em;
+    border: solid 1px #7053c4;
+    padding: 1em 0;
+    color: #bdc3c7;
+    transition: all 0.6s;
+    text-align: center;
+}
+button:hover {
+    cursor:pointer;
+    background: #7035c4;
+}
+h1 {
+    color: #bdc3c7;
+    border-bottom: solid 1px #7035c4;
+    padding: 0 0 0.8em 0;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 1em;
+}
+@media (max-width: 550px) {
+    form {
+        width: 90%;
+        margin-left: 3%;
+        padding-top: 5%;
+    }
+    input {
+        font-size: 1em;
+    }
+}
+/*---------register-end-style---------*/
+
+.main {
+    width: 986px;
+    margin: auto;
+}
+.clearfix::after,.clearfix::before{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/*---------global-style-end--------*/
+
+
+
+
+
+/*---------content----------*/
+
+
+.main_content {
+/*    height: 690px; потім видалити*/
+    width: 790px;
+    background: url(../img/container_center_bg.jpg) repeat-y;
+    margin: auto;
+}
+
+.center_content {
+    /*    height: inherit; потім видалити*/
+    background: url(../img/container_top_bg.jpg) no-repeat;
+}
+
+
+/*--------menu-------*/
+
+.menu {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 187px;
+}
+
+.menu_item {
+    list-style: none;
+}
+
+.menu_link {
+    display: block;
+    height: 30px;
+    width: 120px;
+    background: url(../img/bt.gif) no-repeat;
+    text-align: center;
+    text-decoration: none;
+    line-height: 25px;
+    color: black;
+    font-style: oblique;
+}
+
+.menu_link:hover, .active {
+    background: url(../img/bt_a.gif) no-repeat;
+}
+
+/*--------menu-end------*/
+
+
+/*---------what's new-end---------*/
+
+/*-----------footer-----------*/
+.footer{
+    box-sizing: border-box;
+    background: url(../img/footer_bg.jpg) no-repeat;
+    margin-top: 20px;
+}
+.logos {
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+
+/*---------footer-end---------*/
+
+/*-----------the-end----------*/
