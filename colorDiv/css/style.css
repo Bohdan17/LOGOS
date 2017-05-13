@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.header {
+    height: 200px;
+    background-color: #ffc0cb;
+}
+.page{
+    border: 1px solid red; 
+}
+.menu {
+    height: 50px;
+    background-color: blue;
+}
+.content{
+}
+.box {
+    height: 500px;
+    width: 33.1%;
+    border: 1px solid black;
+    float: left;
+}
+.box.green {
+    background-color: green;
+}
+.box.yellow {
+    background-color: yellow;
+}
+.box.darkmagenta {
+    background-color: darkmagenta;
+}
+.clearfix::after,.clearfix::before{
+    content: '';
+    display: block;
+    clear: both;
+}
+.footer {
+    height: 50px;
+    background-color: blue;
+}
