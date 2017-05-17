@@ -1,0 +1,54 @@
+@import url('http://fonts.googleapis.com/css?family=Droid+Sans:400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: teal;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+h1 {
+    padding-left: 10px;
+    font-size: 400%;
+    color: #eee;
+    text-shadow: 1px 1px 2px #222;
+}
+
+.container {
+    width: 60%;
+    margin: 50px auto;
+}
+
+form { margin: 10px auto; }
+
+input,
+ul {
+    background: #eee;
+    border-radius: 2px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input {
+    padding: 10px 10px 10px 20px;
+    border: 1px solid #ccc;
+}
+
+ul {
+    list-style: square inside;
+    padding: 10px;
+}
+
+li {
+    padding: 10px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+li:nth-child(odd) {
+    background: #dadfe1;
+    border-radius: 2px;
+}

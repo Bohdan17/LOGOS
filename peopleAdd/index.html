@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/libs/jquery-2.1.3.min.js"></script>
+</head>
+
+<body>
+   
+    <div class="container">
+
+        <h1 class="title">JS Pattern Module</h1>
+        <h3>Enter a name: </h3>
+
+        <form action="">
+            <input type="text" class="addName" placeholder="Enter a name and push button">
+            <input type="button" value="Add" class="newName">
+        </form>
+
+        
+        <ul class="listName">
+            <li>SomeName <span class="del">X</span></li>
+        </ul>
+
+    </div>
+    <script>
+        (function(){
+            var people = {
+                people: ['John', 'Jennifer', 'Jessica', 'Jeck', 'Juliette'], 
+                init: function(){ 
+                    this.cacheDom(); 
+                    this.bindEvents(); 
+                    this.render(); 
+                },
+                cacheDom: function(){
+                    this.$el = $('.container');
+                    this.$button = this.$el.find('.newName');
+                    this.$input = this.$el.find('.addName');
+                    this.$ul = this.$el.find('.listName');
+                },
+                bindEvents: function(){
+                    this.$button.on('click', this.addPerson.bind(this)); 
+                    this.$ul.delegate('span.del','click', this.deletePerson.bind(this));
+                },
+                render: function(){
+                    this.$ul.html('');
+                    var data = {
+                        people: this.people
+                    };
+                    for(var i=0;i<data.people.length;i++){
+                        this.$ul.append('<li>'+data.people[i]+' <span class="del">X</span></li>');
+                    }
+                },
+                addPerson: function(){ 
+                    console.log(this);
+                    this.people.push(this.$input.val());
+                    this.render();
+                    this.$input.val('');
+                },
+                deletePerson: function(e){ 
+                    var $remove = $(e.target).closest('li');
+                    var span = this.$ul.find('li').index($remove);
+                    this.people.splice(span,1);
+                    this.render();
+                }
+
+            };
+            people.init(); 
+        })();
+    </script>
+    
+    <sctipt src="js/bootstrap.min.js"></sctipt>
+   
+</body>
+
+</html>
