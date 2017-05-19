@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl as my">
+   
+    <!--Headder of the task list-->
+    <div class="upper container">
+        <h1>Task List</h1>
+        <h3>
+            Count of tasks:
+            <span class="label label-danger">
+                {{my.tasks.length}}
+            </span>
+        </h3>
+        <h3>
+            Count of completed tasks:
+            <span class="label label-danger">
+                {{(my.tasks | filter : {complete : 'true'} ).length}}
+            </span>
+        </h3>
+    </div>
+  
+    <!--Content of the task list-->
+    <div class="lower container">
+       
+        <input type="text" placeholder="Serch for task by description" style="width:91%;margin-left: 8px;" ng-model="my.test">
+        
+        <table class="table">
+            <thead>
+                 <tr>
+                    <th><input type="button" ng-click="my.addTask()" value="AddTask"></th>
+                    <th>Sorted by items click on them:</th>
+                 </tr>
+                 <tr>
+                    <th ng-click="my.sort='Number'">№</th>
+                    <th ng-click="my.sort='Description'">Description</th>
+                    <th ng-click="my.sort='isDone'">isDone</th>
+                    <th>Change</th>
+                    <th>Remove</th>
+                 </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="task in my.tasks | orderBy: my.sort | filter:my.filterFriend | filter: my.test">
+                   <td>{{task.Number}}</td>
+                   <td>{{task.Description}}</td>
+                   <td id="red"><input type="checkbox" style="margin-right:5px;" ng-model="task.complete"/>{{task.isDone}}</td>
+                   <td><input type="button" value="change" ng-click="my.changeTasks(task)"></td>
+                   <td><input type="button" value="remove" ng-click="my.remove(task)"></td>
+                </tr>
+            </tbody>
+        </table> 
+
+    </div>
+   
+   
+    <!--Change function of the task list-->
+    <div class="bottom container">
+        <div ng-if="my.change">
+            <h2>Change task</h2>
+            <div> 
+            <label for=""> №: <input type="text" ng-model="my.changeTask.Number"></label></div> 
+            <div> 
+            <label for=""> Description: <input type="text" ng-model="my.changeTask.Description"></label></div> 
+            <div> 
+            <label for=""> isDone: <input type="text" ng-model="my.changeTask.isDone"></label></div> 
+            <div>
+            <input type="button" value="ok" ng-click="my.finishChange()"> 
+        </div>
+    </div>
+       
+       
+    <script src="app/app.js"></script>
+    <script src="app/services/UserService.js"></script>
+    <script src="app/controllers/controller.js"></script>
+
+    <script src="app/libs/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
